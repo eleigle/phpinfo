@@ -12,7 +12,7 @@ spec:
         - 0.0.0.0:8080
       command:
         - php
-      image: eleigle/redhat-php:latest
+      image: eleigle/redhat-php:latest@sha256:6d5bf4a7a44316c1e947a1040af7c4ce20a802a08f9f280e351fa29e537780d4
       name: phpinfo-container
       ports:
         -
