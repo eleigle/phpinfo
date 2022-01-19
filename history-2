@@ -1,0 +1,64 @@
+   1  git clone https://github.com/eleigle/phpinfo.git
+    2  cd phpinfo
+    3  git checkout contenerizacion
+    4  docker build -f Dockerfile -t redhat-php .
+    5  docker run --rm redhat-php find /bin
+    6  docker run --rm redhat-php find /usr/bin
+    7  docker run --rm redhat-php find /usr/bin |grep php
+    8  docker run --entrypoint /usr/bin/php
+    9  docker run --entrypoint /usr/bin/php --rm redhat-php -v
+   10  php -v
+   11  cat /etc/os-release
+   12  docker run --entrypoint cat --rm redhat-php /etc/os-release
+   13  history
+   14  git pull
+   15  docker build -f Dockerfile -t redhat-php .
+   16  git pull
+   17  docker build -f Dockerfile -t redhat-php .
+   18  docker run --entrypoint php redhat-php -f src/index.php -S 0.0.0.0:8080
+   19  docker run --entrypoint php -p 8080:8080 redhat-php -f src/index.php -S 0.0.0.0:8080
+   20  git pull
+   21  docker build -f Dockerfile -t redhat-php .
+   22  docker run --entrypoint php -p 8080:8080 redhat-php -f src/index.php -S 0.0.0.0:8080
+   23  docker run --entrypoint php -p 8080:8080 -v ./src/index.php:/src/index.php redhat-php -f src/index.php -S 0.0.0.0:8080
+   24  docker run --entrypoint php -p 8080:8080 -v $PWD/src/index.php:/src/index.php redhat-php -f src/index.php -S 0.0.0.0:8080
+   25   docker images
+   26  docker tag redhat-php:latest eleigle/redhat-php:latest
+   27  docker login
+   28  docker push eleigle/redhat-php:latest
+   29  docker push eleigle/repo1:tagname
+   30  https://downloads-openshift-console.apps.ocp.ganimedes-colomar.es/amd64/linux/oc.tar
+   31  wget https://downloads-openshift-console.apps.ocp.ganimedes-colomar.es/amd64/linux/oc.tar
+   32  ls
+   33  tar xf oc.tar
+   34  ls
+   35  echo $PATH
+   36  ls ..
+   37  mkdir -p ../bin
+   38  mv oc ../bin
+   39  oc version
+   40  oc login --token=sha256~r9L6uYSZ3njTCKm1RtmJDfDmwxRtdfYwn4_wjKUCRAk --server=https://api.ocp.ganimedes-colomar.es:6443
+   41  oc status
+   42   oc new-project elena
+   43  oc get all
+   44  oc status
+   45  ln -s ../bin/kubectl ../bin/oc
+   46  ln -s ../bin/oc ../bin/kubectl
+   47  kubectl version
+   48  kubectl
+   49  kubectl explain po
+   50  kubectl explain po.spec
+   51  kubectl explain po.spec.containers
+   52  kubectl explain po.spec.containers.ports
+   53  kubectl explain po.spec.containers.volumeMounts
+   54  kubectl explain po.spec.containers.workingDir
+   55  kubectl explain po.spec.volumes
+   56  kubectl explain po.spec.volumes.configMap
+   57  kubectl explain po.spec.volumes.configMap.items
+   58  cd phpinfo
+   59  git pull
+   60  kubectl apply -f kube-compose-configMap.yaml 
+   61  git pull
+   62  kubectl apply -f kube-compose-configMap.yaml 
+   63  kubectl get all
+   64  kubectl describe po
